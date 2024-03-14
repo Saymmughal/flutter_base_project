@@ -1,64 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project/main.dart';
 
-class RouterNavigator {
-  // Can pop Route or not
-  static bool canGoBack() => Navigator.canPop(navigatorKey.currentContext!);
-  // May be pop Route or not
-  static Future<bool> maybeGoBack() =>
-      Navigator.maybePop(navigatorKey.currentContext!);
-  // pop Route
-  static void goBack() => Navigator.pop(navigatorKey.currentContext!);
-  // Pop Until Route
-  static void goBackUntil(routeName) => Navigator.popUntil(
-      navigatorKey.currentContext!, ModalRoute.withName(routeName));
-  // Push Named Route
-  static Future<Object?> goForwardNamed(routeName, {Object? arguments}) =>
-      Navigator.pushNamed(navigatorKey.currentContext!, routeName,
-          arguments: arguments);
-  // Push And Replace Named Route
-  static Future<Object?> goForwardReplacementNamed(routeName,
-          {Object? arguments}) =>
-      Navigator.pushReplacementNamed(navigatorKey.currentContext!, routeName,
-          arguments: arguments);
-  // Push Named and Remove Until Route
-  static Future<Object?> goForwardNamedAndRemoveUntil(routeName) =>
-      Navigator.pushNamedAndRemoveUntil(
-          navigatorKey.currentContext!, routeName, (route) => false);
-  // Pop And Push Named Route
-  static Future<Object?> goBackAndForwardNamed(routeName,
-          {Object? arguments}) =>
-      Navigator.popAndPushNamed(navigatorKey.currentContext!, routeName,
-          arguments: arguments);
-  // Default Route Name
-  static String defaultRouteName() => Navigator.defaultRouteName;
-  // Restorable Pop and Push Named Route
-  static String restorableGoBackAndForwardNamed(routeName,
-          {Object? arguments}) =>
-      Navigator.restorablePopAndPushNamed(
-          navigatorKey.currentContext!, routeName,
-          arguments: arguments);
-  // Restorable Push Named Route
-  static String restorableForwardNamed(routeName, {Object? arguments}) =>
-      Navigator.restorablePushNamed(navigatorKey.currentContext!, routeName,
-          arguments: arguments);
-  // Restorable Push Named And Remove Until Route
-  static String restorableForwardNamedAndRemoveUntil(routeName) =>
-      Navigator.restorablePushNamedAndRemoveUntil(
-          navigatorKey.currentContext!, routeName, (route) => false);
-  // Restorable Push Remplacement Named Route
-  static String restorableForwardReplacementNamed(routeName,
-          {Object? arguments}) =>
-      Navigator.restorablePushReplacementNamed(
-          navigatorKey.currentContext!, routeName,
-          arguments: arguments);
+// Can pop Route or not
+bool canGoBack() => Navigator.canPop(navigatorKey.currentContext!);
+// May be pop Route or not
+Future<bool> maybeGoBack() => Navigator.maybePop(navigatorKey.currentContext!);
+// pop Route
+void goBack() => Navigator.pop(navigatorKey.currentContext!);
+// Pop Until Route
+void goBackUntil(String routeName) => Navigator.popUntil(
+    navigatorKey.currentContext!, ModalRoute.withName(routeName));
+// Push Named Route
+Future<Object?> goToNamed(String routeName, {Object? arguments}) =>
+    Navigator.pushNamed(navigatorKey.currentContext!, routeName,
+        arguments: arguments);
+// Push And Replace Named Route
+Future<Object?> goReplacementNamed(String routeName, {Object? arguments}) =>
+    Navigator.pushReplacementNamed(navigatorKey.currentContext!, routeName,
+        arguments: arguments);
+// Push Named and Remove Until Route
+Future<Object?> goNamedAndRemoveUntil(String routeName) =>
+    Navigator.pushNamedAndRemoveUntil(
+        navigatorKey.currentContext!, routeName, (route) => false);
+// Pop And Push Named Route
+Future<Object?> goBackAndForwardNamed(String routeName, {Object? arguments}) =>
+    Navigator.popAndPushNamed(navigatorKey.currentContext!, routeName,
+        arguments: arguments);
+// Default Route Name
+String defaultRouteName() => Navigator.defaultRouteName;
+// Restorable Pop and Push Named Route
+String restorableGoBackAndForwardNamed(String routeName, {Object? arguments}) =>
+    Navigator.restorablePopAndPushNamed(navigatorKey.currentContext!, routeName,
+        arguments: arguments);
+// Restorable Push Named Route
+String restorableForwardNamed(String routeName, {Object? arguments}) =>
+    Navigator.restorablePushNamed(navigatorKey.currentContext!, routeName,
+        arguments: arguments);
+// Restorable Push Named And Remove Until Route
+String restorableForwardNamedAndRemoveUntil(String routeName) =>
+    Navigator.restorablePushNamedAndRemoveUntil(
+        navigatorKey.currentContext!, routeName, (route) => false);
+// Restorable Push Remplacement Named Route
+String restorableForwardReplacementNamed(String routeName,
+        {Object? arguments}) =>
+    Navigator.restorablePushReplacementNamed(
+        navigatorKey.currentContext!, routeName,
+        arguments: arguments);
 
-  // Pop If Can
-  static void goBackIfCan({Future<Object?>? elseCondition}) {
-    if (canGoBack()) {
-      goBack();
-    } else {
-      elseCondition;
-    }
+// Pop If Can
+void goBackIfCan({Future<Object?>? elseCondition}) {
+  if (canGoBack()) {
+    goBack();
+  } else {
+    elseCondition;
   }
 }

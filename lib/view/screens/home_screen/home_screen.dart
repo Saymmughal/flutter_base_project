@@ -1,3 +1,6 @@
+import 'package:flutter_base_project/data/model/connection_model/connection_model.dart';
+import 'package:flutter_base_project/helper/router_navigator.dart';
+import 'package:flutter_base_project/helper/routes_helper.dart';
 import 'package:flutter_base_project/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,7 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
       value: whiteStatusBar(),
       child: Scaffold(
           body: Container(
-        child: 'Home Screen'.toText(),
+        child: 'Home Screen'.toText().onPress(
+              () => goToNamed(RouterHelper.noConnectionScreen, arguments: ConnectionModel(currentScreen: RouterHelper.mainScreen, message: 'NO Connection')),
+            ),
       ).center),
     );
   }

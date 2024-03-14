@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project/helper/router_navigator.dart';
+import 'package:flutter_base_project/helper/routes_helper.dart';
 import 'package:flutter_base_project/utils/constant.dart';
 import 'package:flutter_base_project/utils/style.dart';
 import 'package:flutter_base_project/view/widgets/custom_button.dart';
@@ -22,9 +23,21 @@ class NoConnection extends StatelessWidget {
     debugPrint("message is : ${args.message}");
 
     return PopScope(
-      canPop: true, // false or true
-      onPopInvoked: (value) {
-        // Write code while navigating back to previous screen (or you can popup customly here)
+      canPop: false, // false or true
+      onPopInvoked: (bool didPop) {
+        /* ================================================================================================
+        [canPop: true]
+        if canPop is true then it will go to the check (didPop == true) then you can only have to call the function.
+
+        [canPop: false]
+        if canPop is false then it will go to the check (didPop == false) then you have to write  if (didPop) return;
+        and then tou can use function and push or pop function
+        =================================================================================================== */
+        if (didPop) return;
+        debugPrint(
+            "POPSCOpe Called ================================================================> $didPop");
+        Navigator.popUntil(
+            context, ModalRoute.withName(RouterHelper.mainScreen));
       },
       child: Scaffold(
         backgroundColor: whitePrimary,
@@ -56,10 +69,8 @@ class NoConnection extends StatelessWidget {
                 buttonName: Constant.tryAgain,
                 buttonTextColor: whitePrimary,
                 onPressed: () {
-                  RouterNavigator.goBackIfCan(
-                      elseCondition: 
-                          RouterNavigator.goForwardNamedAndRemoveUntil(
-                              args.currentScreen));
+                  goBackIfCan(
+                      elseCondition: goReplacementNamed(args.currentScreen));
                 },
               ),
             ],

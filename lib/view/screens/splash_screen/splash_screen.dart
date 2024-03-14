@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       //   bool? isLogin = await LocalDb.getLogin;
       //   if (isLogin == true) {
       //   } else {
-      RouterNavigator.goForwardReplacementNamed(RouterHelper.mainScreen);
+      goReplacementNamed(RouterHelper.mainScreen);
       //   }
     });
   }

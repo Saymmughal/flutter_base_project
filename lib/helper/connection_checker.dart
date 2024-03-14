@@ -38,7 +38,7 @@ Future<bool> checkInternet(
 
 void navigateToNoConnectionScreen(String screen) {
   Future.delayed(Duration.zero, () {
-    RouterNavigator.goForwardReplacementNamed(
+    goReplacementNamed(
       RouterHelper.noConnectionScreen,
       arguments: ConnectionModel(
         currentScreen: screen,

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 extension WidgetExtension on Widget {
   // OnPress
-  Widget onPress(VoidCallback onTap) => InkWell(onTap: onTap, child: this);
+  Widget onPress(VoidCallback onTap) => InkWell(onTap: onTap,splashColor: Colors.transparent,
+        highlightColor: Colors.transparent, child: this);
 
   // CENTER
   Widget get center => Center(

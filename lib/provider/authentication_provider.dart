@@ -28,7 +28,7 @@ class AuthProvider extends ChangeNotifier {
     if (value == true) {
       // loaderDialog(context);
     } else {
-      RouterNavigator.goBack();
+      goBack();
     }
     notifyListeners();
   }
