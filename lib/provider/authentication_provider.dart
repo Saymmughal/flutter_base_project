@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project/helper/router_navigator.dart';
+import 'package:flutter_base_project/view/widgets/loading_dialog.dart';
 
 class AuthProvider extends ChangeNotifier {
   // Login controller
@@ -23,10 +24,10 @@ class AuthProvider extends ChangeNotifier {
   }
 
   // Set Loading
-  setLoading(BuildContext context, bool value) {
+  setLoading( bool value) {
     isLoading = value;
     if (value == true) {
-      // loaderDialog(context);
+      loaderDialog();
     } else {
       goBack();
     }

@@ -31,7 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
           body: Container(
         child: 'Home Screen'.toText().onPress(
-              () => goToNamed(RouterHelper.noConnectionScreen, arguments: ConnectionModel(currentScreen: RouterHelper.mainScreen, message: 'NO Connection')),
+              () => goToNamed(RouterHelper.noConnectionScreen,
+                  arguments: ConnectionModel(
+                      currentScreen: RouterHelper.mainScreen,
+                      message: 'NO Connection')),
             ),
       ).center),
     );

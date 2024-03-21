@@ -36,8 +36,7 @@ class NoConnection extends StatelessWidget {
         if (didPop) return;
         debugPrint(
             "POPSCOpe Called ================================================================> $didPop");
-        Navigator.popUntil(
-            context, ModalRoute.withName(RouterHelper.mainScreen));
+        goBackUntil(RouterHelper.mainScreen);
       },
       child: Scaffold(
         backgroundColor: whitePrimary,
