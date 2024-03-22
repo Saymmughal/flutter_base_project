@@ -36,13 +36,14 @@ Future<bool> checkInternet(
   }
 }
 
-void navigateToNoConnectionScreen(String screen) {
+void navigateToNoConnectionScreen(String screen, {Object? arguments}) {
   Future.delayed(Duration.zero, () {
     goReplacementNamed(
       RouterHelper.noConnectionScreen,
       arguments: ConnectionModel(
         currentScreen: screen,
         message: Constant.internetConnectionMessage,
+        arguments: arguments,
       ),
     );
   });
