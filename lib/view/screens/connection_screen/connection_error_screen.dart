@@ -60,7 +60,7 @@ class NoConnection extends StatelessWidget {
                   textAlign: TextAlign.center,
                   maxLine: 2,
                   fontSize: 18,
-                  fontFamily: poppinsMedium,
+                  fontWeight: w500,
                   color: whitePrimary,
                 ),
               ),

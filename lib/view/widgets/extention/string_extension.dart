@@ -9,7 +9,6 @@ extension StringExtension on String {
           int? maxLine,
           TextAlign? textAlign,
           TextOverflow? overflow,
-          String? fontFamily,
           FontWeight? fontWeight,
           Color? backgroundColor,
           double? lineHeight,
@@ -24,7 +23,7 @@ extension StringExtension on String {
           backgroundColor: backgroundColor ?? backgroundColor,
           color: color ?? Colors.black,
           fontSize: (fontSize ?? 12).toInt().h,
-          fontFamily: fontFamily ?? poppinsRegular,
+          fontFamily: poppins,
           fontStyle: FontStyle.normal,
           overflow: overflow ?? TextOverflow.ellipsis,
           fontWeight: fontWeight ??

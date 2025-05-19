@@ -19,7 +19,7 @@ class NoDataFound extends StatelessWidget {
           title.toText(
             textAlign: TextAlign.center,
             fontSize: 14,
-            fontFamily: poppinsMedium,
+            fontWeight: w500,
             color: whitePrimary,
           ),
         ],

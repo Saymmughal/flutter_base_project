@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_base_project/utils/style.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_base_project/helper/provider_helper.dart';
 import 'package:flutter_base_project/helper/routes_helper.dart';
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
           title: 'Base Project',
           theme: ThemeData(
             useMaterial3: false,
+            fontFamily: poppins,
             primarySwatch: const MaterialColor(0x306A99, primaryColor),
             pageTransitionsTheme: const PageTransitionsTheme(builders: {
               TargetPlatform.android: CupertinoPageTransitionsBuilder(),
