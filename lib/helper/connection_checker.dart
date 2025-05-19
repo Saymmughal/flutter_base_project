@@ -11,8 +11,8 @@ Future<bool> checkInternet(
   String screen,
 ) async {
   var connectivityResult = await (Connectivity().checkConnectivity());
-  if (connectivityResult == ConnectivityResult.mobile) {
-    if (await InternetConnectionChecker().hasConnection) {
+  if (connectivityResult.contains(ConnectivityResult.mobile) ) {
+    if (await InternetConnectionChecker.instance.hasConnection) {
       debugPrint("Connected with mobile");
       return true;
     } else {
@@ -20,8 +20,8 @@ Future<bool> checkInternet(
       navigateToNoConnectionScreen(screen);
       return false;
     }
-  } else if (connectivityResult == ConnectivityResult.wifi) {
-    if (await InternetConnectionChecker().hasConnection) {
+  } else if (connectivityResult.contains(ConnectivityResult.wifi) ) {
+    if (await InternetConnectionChecker.instance.hasConnection) {
       debugPrint("Connected with wifi");
       return true;
     } else {
