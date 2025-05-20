@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project/main.dart';
 import 'package:flutter_base_project/utils/colors.dart';
-import 'package:flutter_base_project/utils/style.dart';
 import 'package:flutter_base_project/view/widgets/extention/string_extension.dart';
 
 ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showToast(
-    {required String message,required bool isError}) {
+    {required String message, required bool isError}) {
   return ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
       _customSnackBar(navigatorKey.currentContext!, message, isError));
 }
-
 
 SnackBar _customSnackBar(BuildContext context, String message, bool isError) {
   return SnackBar(
@@ -21,7 +19,7 @@ SnackBar _customSnackBar(BuildContext context, String message, bool isError) {
     padding: EdgeInsets.zero,
     content: Container(
       decoration: BoxDecoration(
-          color: isError? greenPrimary : redSecondary,
+          color: isError ? greenPrimary : redSecondary,
           borderRadius: BorderRadius.circular(10),
           boxShadow: const [
             BoxShadow(
@@ -34,11 +32,10 @@ SnackBar _customSnackBar(BuildContext context, String message, bool isError) {
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: message.toText(
-              textAlign: TextAlign.start,
-              fontSize: 14,
-              color: whitePrimary,
-              fontWeight: w500),
+          child: message.to14W500Text(
+            textAlign: TextAlign.start,
+            color: whitePrimary,
+          ),
         ),
       ),
     ),

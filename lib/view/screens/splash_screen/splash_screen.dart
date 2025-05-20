@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
       value: whiteStatusBar(),
       child: Scaffold(
           body: Container(
-        child: 'Splash Screen'.toText(),
+        child: 'Splash Screen'.to12W600Text(),
       ).center),
     );
   }

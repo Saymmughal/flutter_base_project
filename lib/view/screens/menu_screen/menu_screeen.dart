@@ -14,7 +14,7 @@ class MenuScreen extends StatelessWidget {
       child: Scaffold(
           backgroundColor: greenPrimary,
           body: Container(
-            child: 'Menu Screen'.toText(),
+            child: 'Menu Screen'.to12W600Text(),
           ).center),
     );
   }

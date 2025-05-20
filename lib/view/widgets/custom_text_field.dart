@@ -76,8 +76,7 @@ class CustomTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         label != null
-            ? label!.toText(
-                fontSize: 12, fontWeight: w400, color: whitePrimary)
+            ? label!.to12W400Text(color: whitePrimary)
             : const SizedBox(),
         label != null ? 2.height : const SizedBox(),
         SizedBox(
@@ -91,9 +90,7 @@ class CustomTextField extends StatelessWidget {
                   ? AutovalidateMode.always
                   : AutovalidateMode.onUserInteraction,
               style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: w400,
-                  color: whitePrimary),
+                  fontSize: 14, fontWeight: w400, color: whitePrimary),
               obscureText: obscureText ?? false,
               keyboardType: textInputType,
               validator: validator,
@@ -109,16 +106,20 @@ class CustomTextField extends StatelessWidget {
               },
               decoration: InputDecoration(
                 errorStyle: TextStyle(
-                    fontSize: 12,
-                    color: redSecondary,
-                    fontWeight: w400,),
+                  fontSize: 12,
+                  color: redSecondary,
+                  fontWeight: w400,
+                ),
                 fillColor: fillColor,
                 filled: isBorder == true ? true : false,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
                 hintText: hintText,
                 errorMaxLines: 2,
                 hintStyle: TextStyle(
-                    fontSize: 14, color: hintColor, fontWeight: w400,),
+                  fontSize: 14,
+                  color: hintColor,
+                  fontWeight: w400,
+                ),
                 contentPadding: isBorder == true
                     ? EdgeInsets.symmetric(
                         vertical: 10.h,
@@ -127,9 +128,7 @@ class CustomTextField extends StatelessWidget {
                 suffixIcon: suffixIcon ?? const SizedBox(),
                 prefixText: isPrefixIcon ? "+1 " : null,
                 prefixStyle: TextStyle(
-                    fontSize: 14,
-                   fontWeight: w400,
-                    color: whitePrimary),
+                    fontSize: 14, fontWeight: w400, color: whitePrimary),
                 border: isBorder == true
                     ? OutlineInputBorder(
                         borderSide: BorderSide(color: borderColor, width: 1),
