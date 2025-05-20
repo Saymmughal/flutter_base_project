@@ -3,6 +3,12 @@ class Constant {
   static const String homeText = "Home";
   static const String menuText = "Menu";
 
+  static const String cameraText = "Camera";
+  static const String galleryText = "Gallery";
+  static const String setImage = "Set Image";
+  static const String cancelText = "Cancel";
+  static const String doneText = "Done";
+
   // Date Text
   static const String yearText = "year";
   static const String yearsText = "years";
@@ -32,6 +38,8 @@ class Constant {
   static const String pleeaseEnterReason = "Please enter Reason";
 
   // Error Text
+  static const String imageSizeMustBeLessThen1MB =
+      "Image size must be less then 1 MB";
   static const String errorText = "Oops! Something went wrong. Let's try again.";
   static const String tryAgain = "Try again";
   static const String internetConnectionMessage = "Check your Internet Connection";

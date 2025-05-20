@@ -86,10 +86,10 @@ void apiException(
         default:
           break;
       }
-      showToast(message: connectionModel.message, isError: true);
+      showToast(connectionModel.message);
       break;
     default:
-      showToast(message: exception.response!.data['message'], isError: true);
+      showToast(exception.response!.data['message']);
       break;
   }
 }
